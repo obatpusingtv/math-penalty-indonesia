@@ -1,0 +1,60 @@
+/* UI/UX Expert & Animator Styles */
+:root {
+    --primary-blue: #1cb0f6;
+    --primary-blue-dark: #1899d6;
+    --primary-green: #58cc02;
+    --primary-green-dark: #58a700;
+    --danger-red: #ff4b4b;
+    --text-white: #ffffff;
+    --bg-dark: #111b21;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background-color: var(--bg-dark); color: var(--text-white); overflow: hidden; }
+
+.screen { width: 100vw; height: 100vh; position: relative; }
+.hidden { display: none !important; }
+.flex-center { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+/* Buttons Modern (Duolingo Style) */
+.btn {
+    border: none; border-radius: 16px; padding: 15px 20px; font-size: 1.2rem; font-weight: bold;
+    color: white; cursor: pointer; transition: transform 0.1s, box-shadow 0.1s;
+    width: 100%; max-width: 300px; margin: 10px 0; text-transform: uppercase;
+}
+.btn-primary { background: var(--primary-green); box-shadow: 0 6px 0 var(--primary-green-dark); }
+.btn-primary:active { transform: translateY(6px); box-shadow: 0 0 0 transparent; }
+.btn-secondary { background: var(--primary-blue); box-shadow: 0 6px 0 var(--primary-blue-dark); }
+
+/* HUD */
+.hud {
+    position: absolute; top: 0; left: 0; width: 100%; padding: 15px; 
+    display: flex; justify-content: space-between; z-index: 10;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+}
+.stat { font-size: 1.2rem; font-weight: bold; background: rgba(0,0,0,0.5); padding: 5px 15px; border-radius: 20px; }
+
+/* Arena Game & Animasi */
+.game-area { position: relative; height: 60vh; width: 100%; background: linear-gradient(to top, #2e7d32, #1b5e20); overflow: hidden;}
+.character { position: absolute; font-size: 4rem; transition: all 0.5s ease; }
+.goalkeeper { top: 20%; left: 50%; transform: translateX(-50%); }
+.player { bottom: 10%; left: 50%; transform: translateX(-50%); }
+.ball { position: absolute; font-size: 2rem; bottom: 25%; left: 50%; transform: translateX(-50%); transition: all 0.5s ease-in-out; }
+
+/* Animasi */
+.anim-kick { transform: translateX(-50%) translateY(-20px) scale(1.1); }
+.anim-goal { bottom: 80% !important; left: 50% !important; transform: translateX(-50%) scale(0.5) !important; }
+.anim-save { bottom: 60% !important; left: 30% !important; }
+.anim-keeper-jump { left: 30% !important; transform: rotate(-45deg); }
+
+.feedback-text { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; font-weight: 900; color: gold; text-shadow: 2px 4px 0px #000; z-index: 20; animation: popIn 0.5s ease backwards; }
+
+@keyframes popIn { 0% { transform: translate(-50%, -50%) scale(0); } 100% { transform: translate(-50%, -50%) scale(1); } }
+
+/* Pertanyaan UI */
+.question-board { height: 40vh; background: white; color: black; border-top-left-radius: 30px; border-top-right-radius: 30px; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: space-around; box-shadow: 0 -10px 20px rgba(0,0,0,0.3); }
+#question-text { font-size: 2.5rem; color: var(--bg-dark); }
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; max-width: 600px; }
+.option-btn { background: var(--bg-dark); color: white; font-size: 1.5rem; padding: 15px; border-radius: 15px; border: 2px solid #ccc; cursor: pointer; box-shadow: 0 4px 0 #888; }
+.option-btn:active { transform: translateY(4px); box-shadow: none; }

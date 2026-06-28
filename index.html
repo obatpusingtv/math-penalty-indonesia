@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Math Penalty Indonesia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1cb0f6">
+</head>
+<body>
+    <div id="splash-screen" class="screen flex-center">
+        <h1 class="logo-anim">⚽ MATH PENALTY 🇮🇩</h1>
+        <div class="loader"></div>
+    </div>
+
+    <div id="main-menu" class="screen hidden">
+        <div class="bg-stadium"></div>
+        <div class="menu-container">
+            <h1 class="title">MATH PENALTY</h1>
+            <div class="button-group">
+                <button onclick="window.location.href='game.html'" class="btn btn-primary btn-large">Mulai Bermain</button>
+                <button class="btn btn-secondary">Pilih Kelas</button>
+                <button class="btn btn-secondary">Prestasi</button>
+                <button class="btn btn-secondary">Toko (Shop)</button>
+                <button class="btn btn-secondary">Statistik</button>
+                <button class="btn btn-warning">Mode Orang Tua</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Registrasi Service Worker untuk PWA Offline
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(reg => console.log('PWA Registered!', reg))
+                .catch(err => console.error('PWA Error:', err));
+        }
+    </script>
+</body>
+</html>
