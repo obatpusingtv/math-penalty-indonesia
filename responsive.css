@@ -1,0 +1,5 @@
+/* Pengaturan layar responsif */
+@media (max-width: 600px) {
+    #question-text { font-size: 1.5rem !important; }
+    .btn { font-size: 1rem !important; padding: 10px !important; }
+}
